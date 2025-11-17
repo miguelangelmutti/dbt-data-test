@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: raw_car_sales
+    database: DATABOOSTERS
+    schema: DBT_MMUTTI
+    tables:
+           - name: car_sales
+             description: Tabla de datos de ventas desde DATABOOSTERS transaccional
+             columns:
+                  - name: DDATE
+                    description: fecha de venta de la columna
+                  - name: SALESPERSON
+                    description: "nombre del vendedor"
+                    tests:
+                      - not_null
+                  - name: CUSTOMERNAME
+                    description: "nombre del cliente"
+                  - name: CARMAKE
+                    description: "marca del vehiculo"
+                  - name: CARMODEL
+                    description: "modelo del vehiculo"
+                  - name: CARYEAR
+                    description: "año del vehiculo"
+                  - name: SALEPRICE
+                    description: "precio de venta"
+                  - name: COMMISSIONRATE
+                    description: "tasa de comision cobrada por el vendedor"
+                  - name: COMMISSIONEARNED
+                    description: "monto de la comision"
+
