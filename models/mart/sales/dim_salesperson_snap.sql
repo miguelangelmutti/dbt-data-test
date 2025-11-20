@@ -17,7 +17,7 @@ with snapshot_data as (
         dbt_valid_from,
         dbt_valid_to,
         row_number() over (
-            partition by SALESPERSON_ID, cast(dbt_valid_from as date)
+            partition by SALESPERSON_ID, cast(dbt_valid_from as timestamp)
             order by dbt_valid_from desc
         ) as rn
       from {{ ref('salesperson_snapshot') }}	  
