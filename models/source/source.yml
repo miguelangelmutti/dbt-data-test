@@ -28,4 +28,24 @@ sources:
                     description: "tasa de comision cobrada por el vendedor"
                   - name: COMMISSIONEARNED
                     description: "monto de la comision"
+  - name: snowflake_salesperson
+    database: DATABOOSTERS
+    schema: PUBLIC
+    tables:
+           - name: SALESPERSON
+             description: Vendedores de autos con la informacion de comision, sucursal donde venden, status 
+             columns:
+                  - name: salesperson_id
+                    description: id del vendedor
+                  - name: SALESPERSON
+                    description: nombre del vendedor
+                    tests:
+                      - not_null
+                  - name: comission_rate
+                    description: comision del vendedor
+                  - name: store_id
+                    description: id de la sucursal
+                  - name: last_updated_ts
+                    description: ultima actualizacion
+                 
 
